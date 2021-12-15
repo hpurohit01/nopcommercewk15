@@ -1,0 +1,22 @@
+package com.demo.nopcommerce.pages;
+
+import com.demo.nopcommerce.uitility.Utility;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+
+public class NotebooksPage extends Utility {
+
+        private static final Logger log = LogManager.getLogger(ComputerPage.class.getName());
+
+        @FindBy(xpath = "//h1[contains(text(),'Notebooks')]")
+        WebElement notebooksText;
+
+        public String getNotebooksPageNavigationText(){
+
+            log.info("Navigate to notebooks page and verify navigated page welcome text "+ notebooksText.toString());
+            return notebooksText.getText();
+        }
+}
+
